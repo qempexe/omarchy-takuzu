@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.qempexe.takuzu",
+  "name": "Takuzu",
+  "version": "1.0.0",
+  "author": "qempexe",
+  "license": "MIT",
+  "description": "Takuzu (binary puzzle) for the Omarchy bar: keyboard-driven popup with three difficulties, logical hints, timer and saved progress.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Takuzu",
+    "category": "Games",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "showCounts": true,
+      "highlightErrors": true,
+      "mistakeLimit": 0,
+      "barTime": true
+    },
+    "schema": [
+      {
+        "key": "showCounts",
+        "type": "boolean",
+        "label": "Show row and column needs",
+        "defaultValue": true,
+        "description": "Under the board, say how many 0s and 1s the selected row and column still need."
+      },
+      {
+        "key": "highlightErrors",
+        "type": "boolean",
+        "label": "Highlight errors",
+        "defaultValue": true,
+        "description": "Tint cells that break a rule and mark entries that do not match the solution."
+      },
+      {
+        "key": "mistakeLimit",
+        "type": "integer",
+        "label": "Mistake limit",
+        "min": 0,
+        "max": 9,
+        "step": 1,
+        "defaultValue": 0,
+        "description": "The puzzle is lost after this many wrong entries. 0 means unlimited."
+      },
+      {
+        "key": "barTime",
+        "type": "boolean",
+        "label": "Show the timer on the bar",
+        "defaultValue": true,
+        "description": "Show the elapsed time next to 01 while a puzzle is in progress."
+      }
+    ]
+  }
+}
